@@ -3,6 +3,34 @@ Your task, should you accept it, is to implement a GraphQL server using the skel
 
 We would like to be able to query our server for users along with their `Pets` and `Cars`.
 
+Example of queries we would like to be able to do
+
+```js
+query users([<stringOfUserIds>]){
+  user{
+    ...userField
+    pets{
+      ...petfields
+    }
+    cars{
+      ...carFields
+    }
+  }
+}
+
+query user(<userId>){
+  user{
+    ...userField
+    pets{
+      ...petfields
+    }
+    cars{
+      ...carFields
+    }
+  }
+}
+```
+
 You aren't meant to spend more than 2-3 hours on this test.
 
 ## GQL Test services 
@@ -21,7 +49,6 @@ It exposes two endpoints:
 
 the `User` object:
 ```js
-
 interface User {
   id: string;
   displayName: string;
